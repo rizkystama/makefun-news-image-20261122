@@ -32,7 +32,7 @@ Man Utd); certainty tags REPORTED / CLAIM / ADOPTION PENDING with footer
 legend; "Sources read to ~11:00 UTC" line.
 
 **Build:** render.py (deterministic PIL, no randomness/time) → entry.png
-1024x1024, 186,584 bytes (v3). main.ts copies the pinned render after
+1024x1024, 186,412 bytes (v3). main.ts copies the pinned render after
 sha256 verification. v2 fixed card caption spacing (both caption lines
 fit). v3 applied all ChatGPT final-review fixes (see main.ts header):
 Bahrain attribution, COP31 wording, Kyiv wording, 06:00 UTC drone tally,
