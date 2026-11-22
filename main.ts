@@ -17,14 +17,13 @@ const bytes = readFileSync(src);
 
 // Pinned sha256 of the approved render (render.py run twice, byte-identical).
 // v2: card caption spacing fixed (both caption lines now fit inside cards).
-// v3: ChatGPT final-review fixes — Bahrain attribution (no "denies"), COP31
-// "final draft" wording + 35% of final energy use, Kyiv "part of block
-// collapses", drone tally at 06:00 UTC, top band no longer claims every
-// story is dated Sunday, 2 duplicates removed, Bedard/MacKinnon split,
-// Sparta II + Wembanyama labelled as Saturday events with Sunday coverage,
-// timeline rebuilt on verified times only (31 stories).
+// v4: ChatGPT confirmation-round fixes — Nigeria removed (Saturday toll
+// announcement, not a Sunday item; 30 stories, 5 regions), Bahrain date-check
+// wording no longer says "denial", Wadkute labelled as Sunday reports with
+// exact timing disputed, Sparta II caption polished. ALSO list back to
+// 3 columns x 5 rows.
 const EXPECTED_SHA256 =
-  "3a2fe21bf9c60c6f972b4817fb06da7e3750927a784a236254db168723f17d06";
+  "30a1cd10e1e5e295f007243a6179e39a7459bbaec3d9493d07f01c509cc3a0ee";
 
 // PNG magic bytes (89 50 4E 47 0D 0A 1A 0A). The judge tells the format from
 // the first bytes, so a non-PNG here would fail intake outright.
