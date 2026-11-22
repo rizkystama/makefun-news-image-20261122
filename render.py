@@ -56,7 +56,7 @@ F = {
     "lead_b": font(SANS, 10),
     "cap": font(SANS, 9),
     "cap_b": font(SANS_B, 9),
-    "card_h": font(SANS_B, 10),
+    "card_h": font(SANS_B, 11),
     "card_c": font(SANS, 8),
     "sect": font(SANS_B, 12),
     "list": font(SANS, 10),
@@ -102,14 +102,14 @@ d = ImageDraw.Draw(img)
 # ---------------------------------------------------------------- top band 0-18
 d.rectangle([0, 0, 1024, 18], fill=NAVY)
 d.text((10, 3), "THE WORLD IN ONE DAY", font=F["band"], fill=(255, 255, 255))
-r = "32 STORIES  ·  6 REGIONS  ·  EVERY ONE DATED SUNDAY 22 NOVEMBER 2026"
+r = "31 STORIES  ·  6 REGIONS  ·  SUNDAY 22 NOVEMBER 2026 NEWS EDITION"
 d.text((1014 - d.textlength(r, font=F["band"]), 3), r, font=F["band"],
        fill=(255, 220, 130))
 
 # ---------------------------------------------------------------- masthead 18-78
 center(d, 512, 24, "Sunday 22 November 2026", F["mast"])
 center(d, 512, 80,
-       "COP31's deal names no fossil fuels  ·  186 drones over Ukraine in the night  ·  Iran's radar claim meets Bahrain's denial",
+       "COP31 text omits fossil fuels  ·  186 drones over Ukraine in the night  ·  Iran claims US radars hit",
        F["sub"], RED)
 d.rectangle([8, 98, 1016, 100], fill=INK)
 
@@ -129,8 +129,8 @@ for i, (n, lab) in enumerate(stats):
 d.line([8, 138, 1016, 138], fill=INK, width=1)
 
 # ---------------------------------------------------------------- region bar 138-158
-regs = [("ASIA-PACIFIC", 12, (184, 120, 20)), ("MIDDLE EAST", 7, RED),
-        ("AMERICAS", 5, (13, 100, 100)), ("GLOBAL", 4, NAVY),
+regs = [("ASIA-PACIFIC", 11, (184, 120, 20)), ("MIDDLE EAST", 7, RED),
+        ("AMERICAS", 6, (13, 100, 100)), ("GLOBAL", 3, NAVY),
         ("EUROPE", 3, (60, 90, 140)), ("AFRICA", 1, GREEN)]
 rx = 8
 for name, n, col in regs:
@@ -143,9 +143,9 @@ d.text((rx + 4, 143), "ONE DAY  ·  ONE PAGE", font=F["reg"], fill=GREY)
 
 # ---------------------------------------------------------------- timeline 158-178
 d.rectangle([8, 160, 1016, 178], fill=INK)
-tl = ("THE DAY IN UTC   01:00 HK POLLS OPEN   ·   03:00 COP31 OBJECTIONS CLOSE   ·   "
-      "03:56 INDONESIA FIRE: 36 MISSING   ·   06:00 COP31 PLENARY DUE   ·   "
-      "08:00 161 OF 186 DRONES DOWNED   ·   08:05 SPARTA II STILL BURNING")
+tl = ("THE DAY IN UTC   01:00 HK POLLS OPEN   ·   02:30 S. KOREA MINISTER RESIGNS   ·   "
+      "03:56 INDONESIA FIRE: 36 MISSING   ·   06:00 161 OF 186 DRONES DOWNED   ·   "
+      "06:00 COP31 PLENARY DUE")
 f = F["time"]
 while d.textlength(tl, font=f) > 1000 and f.size > 8:
     f = font(SANS_B, f.size - 1)
@@ -185,12 +185,13 @@ d.text((ix0 + 124, iy0 + 28), "ANTALYA", font=F["cap_b"], fill=INK)
 d.text((x0 + 8, LY0 + 94), "1  ·  ANTALYA, TÜRKIYE  ·  CLIMATE", font=F["lead_s"],
        fill=INK)
 tag(d, x0 + LW - 118, LY0 + 93, "ADOPTION PENDING", AMBER)
-for j, ln in enumerate(wrap(d, "COP31's final text lands with no mention of fossil fuels",
+for j, ln in enumerate(wrap(d, "COP31 releases final draft with no fossil-fuel mention",
                             F["lead"], LW - 16)):
     d.text((x0 + 8, LY0 + 110 + j * 20), ln, font=F["lead"], fill=INK)
-body1 = ("Ten-page package drops the $120bn adaptation target, keeps a 35% "
-         "electricity goal for 2035, and is the first COP text to admit 1.5°C "
-         "will be missed. Plenary delayed; adoption pending. (Reuters, BBC)")
+body1 = ("Package drops the $120bn adaptation target, calls for electricity "
+         "to reach 35% of final energy use by 2035, and is the first COP text "
+         "to admit 1.5°C will be missed. Plenary delayed; adoption pending. "
+         "(Reuters, BBC)")
 for j, ln in enumerate(wrap(d, body1, F["lead_b"], LW - 16)):
     d.text((x0 + 8, LY0 + 150 + j * 12), ln, font=F["lead_b"], fill=INK)
 
@@ -219,12 +220,13 @@ d.polygon([(ix0 + 296, iy0 + 88), (ix0 + 302, iy0 + 66), (ix0 + 308, iy0 + 88)],
 d.text((x0 + 8, LY0 + 94), "2  ·  MANAMA, BAHRAIN  ·  IRAN", font=F["lead_s"],
        fill=INK)
 tag(d, x0 + LW - 52, LY0 + 93, "CLAIM", RED)
-for j, ln in enumerate(wrap(d, "Iran claims two US radars hit; Bahrain denies it",
+for j, ln in enumerate(wrap(d, "Iran claims US radars hit; Bahrain reports interceptions",
                             F["lead"], LW - 16)):
     d.text((x0 + 8, LY0 + 110 + j * 20), ln, font=F["lead"], fill=INK)
-body2 = ("IRGC says it struck Patriot radars at al-Riffa and Awali on Saturday "
-         "night. Bahrain says its defences intercepted the attack; a civilian "
-         "site burned, no injuries. (IRNA, Bahrain Interior Ministry)")
+body2 = ("IRGC claimed strikes on Patriot radar positions at al-Riffa and "
+         "Awali late Saturday. Bahrain reported interceptions and a fire at a "
+         "civilian site, no injuries. Radar damage unverified. "
+         "(IRNA, Bahrain govt)")
 for j, ln in enumerate(wrap(d, body2, F["lead_b"], LW - 16)):
     d.text((x0 + 8, LY0 + 150 + j * 12), ln, font=F["lead_b"], fill=INK)
 
@@ -251,12 +253,13 @@ d.polygon([(ix0 + 106, iy0 + 48), (ix0 + 118, iy0 + 22), (ix0 + 130, iy0 + 48)],
 d.text((x0 + 8, LY0 + 94), "3  ·  KYIV REGION, UKRAINE  ·  WAR", font=F["lead_s"],
        fill=INK)
 tag(d, x0 + LW - 74, LY0 + 93, "REPORTED", GREEN)
-for j, ln in enumerate(wrap(d, "Russia fires 186 drones; a Kyiv-region block is destroyed",
+for j, ln in enumerate(wrap(d, "186 drones fired; strike collapses part of Kyiv-region block",
                             F["lead"], LW - 16)):
     d.text((x0 + 8, LY0 + 110 + j * 20), ln, font=F["lead"], fill=INK)
-body3 = ("Air defences downed or suppressed 161 of 186 strike drones, 72 of "
-         "them jet-powered. One destroyed a five-storey block: 14 feared "
-         "trapped, two injured, nine evacuated. (Ukrainian Air Force, Reuters)")
+body3 = ("Air defences downed or suppressed 161 of 186 strike drones, 72 "
+         "jet-powered. One strike collapsed part of a five-storey block: 14 "
+         "may remain trapped, nine evacuated, two injured. "
+         "(Ukrainian Air Force, Reuters)")
 for j, ln in enumerate(wrap(d, body3, F["lead_b"], LW - 16)):
     d.text((x0 + 8, LY0 + 150 + j * 12), ln, font=F["lead_b"], fill=INK)
 
@@ -280,10 +283,10 @@ cards = [
      "Night convoys under US protection;", "11 crew hurt, 1 missing (WSJ)", "tanker"),
     ("OpenRouter drops 3 providers",
      "After canary-token research", "exposed data leaks (THN)", "chip"),
-    ("Russian ship still burning off Finland",
-     "Sparta II hit Saturday; 16 crew", "safe, fire fought overnight (Reuters)", "ship"),
-    ("Wembanyama scores 50 as Spurs roll on",
-     "50 pts, 19 rebounds, 5 blocks;", "114-91 over Pelicans (AP)", "ball"),
+    ("Sparta II still burns off Finland",
+     "Saturday drone strike; 16 crew", "evacuated; burning Sun (Reuters)", "ship"),
+    ("Wembanyama scores 50 in US",
+     "50 pts, 19 rebounds, 5 blocks;", "Sat night US = Sun UTC (AP)", "ball"),
     ("Pope shares lunch with 1,300 poor",
      "World Day of the Poor; 106 tables", "in Paul VI Hall (Vatican)", "table"),
 ]
@@ -407,7 +410,7 @@ for idx, (h, c1, c2, kind) in enumerate(cards):
         d.text((ix + 4, iy + 30), "1,300", font=font(SANS_B, 11), fill=NAVY)
     d.text((x0 + 5, y0 + 51), f"{idx + 4:02d}", font=F["cap_b"], fill=RED)
     for j, ln in enumerate(wrap(d, h, F["card_h"], CW - 10)[:2]):
-        d.text((x0 + 5, y0 + 62 + j * 11), ln, font=F["card_h"], fill=INK)
+        d.text((x0 + 5, y0 + 61 + j * 11), ln, font=F["card_h"], fill=INK)
     d.text((x0 + 5, y0 + 85), c1, font=F["card_c"], fill=GREY)
     d.text((x0 + 5, y0 + 95), c2, font=F["card_c"], fill=GREY)
 
@@ -492,7 +495,7 @@ for num, lon, lat, dx, dy in PINS:
                 outline=RED, width=1)
     d.text((lx + 3, ly + 1.5), num, font=F["pin"], fill=RED)
 d.text((MAPX0, MY0 + 164),
-       "No pin: 12 OpenRouter (global) · 16-32 listed at right.",
+       "No pin: 12 OpenRouter (global) · 16-31 listed at right.",
        font=F["cap"], fill=GREY)
 
 # DATE CHECK (right)
@@ -501,15 +504,15 @@ d.rectangle([DX0, DY0, DX1, DY1], outline=INK, width=2)
 d.text((DX0 + 8, DY0 + 5), "DATE CHECK — WHAT COUNTS AS 22 NOVEMBER",
        font=F["sect"], fill=INK)
 dc_rows = [
-    (RED, "LEFT OUT — OTHER DAYS' NEWS",
+    (RED, "LEFT OUT — PRE-22 NOVEMBER EVENTS",
      "Peru M6.7 quake (Fri 20 Nov) · 'El Chapo Isidro' captured (Fri) · "
      "EU–Indonesia pact signed (Sat) · BepiColombo Mercury orbit (Sat) · "
      "FBI crime-database hack (Fri)"),
-    (GREEN, "INCLUDED — 22 NOV 2026",
-     "COP31 text released · 186-drone night · Bahrain claim vs denial · "
-     "Sparta II still burning (Sunday update) · Wembanyama 50 "
-     "(Sat night US = Sun UTC)"),
-    (AMBER, "NOT YET DECIDED AT PRESS TIME",
+    (GREEN, "INCLUDED — SUNDAY DEVELOPMENTS AND SUNDAY UPDATES",
+     "COP31 text debated · 186-drone night · Bahrain claim vs denial · "
+     "Sparta II still burning (Sun update) · Wembanyama 50, Indonesia fire "
+     "search, Nigeria toll, ICE arrests (Sat events, Sun reports)"),
+    (AMBER, "UNDECIDED AT EDITION DEADLINE",
      "COP31 adoption · ATP Finals final, Alcaraz v Zverev · "
      "Liverpool v Man Utd"),
 ]
@@ -522,11 +525,11 @@ for color, head, text in dc_rows:
         d.text((DX0 + 22, y), ln, font=F["dc"], fill=INK)
         y += 12
     y += 6
-d.text((DX0 + 8, DY1 - 16), "Sources read to ~11:00 UTC, Sun 22 Nov 2026.",
+d.text((DX0 + 8, DY1 - 16), "Sources checked through ~11:00 UTC, Sun 22 Nov 2026.",
        font=F["cap"], fill=GREY)
 
 # ---------------------------------------------------------------- ALSO list 794-978
-d.text((8, 796), "ALSO ON SUNDAY 22 NOVEMBER — 17 MORE STORIES",
+d.text((8, 796), "ALSO ON SUNDAY 22 NOVEMBER — 16 MORE STORIES",
        font=F["sect"], fill=INK)
 d.line([8, 814, 1016, 814], fill=INK, width=1)
 also = [
@@ -534,26 +537,25 @@ also = [
     "Houthi missile intercepted near Mecca — coalition claim",
     "M5.6 quake off Sarangani, Philippines; no damage",
     "Kansas City Current win first NWSL title, 2–1",
-    "Two Palestinians die of wounds from al-Mawasi strike",
+    "Two Palestinians die of wounds from early-Sunday al-Mawasi strike",
     "IRGC chief: Iran's airspace is a 'red line'",
     "Indian poet Rajendra Shukla dies, 84",
-    "COP31: $120bn adaptation target dropped from text",
-    "Pant 128, Rahul 136 — six 70+ scores in one innings",
     "Thailand to block chemical exports for Myanmar mining",
-    "ICE arrests two travellers at Seattle airport",
-    "Nigeria boat toll rises to 24 (Friday capsize)",
+    "ICE arrests two at Seattle airport (Sat incident, Sun report)",
+    "Nigeria boat toll at 24 (capsized Fri, toll announced Sat)",
     "Pakistan: 15 militants killed in Mastung operations",
     "Ghostscript 'Upload2Shell' flaw; Debian 12 exposed",
     "Hamas seeks urgent mediator talks after aid strike",
     "BJP MP Ramrao Wadkute dies at the weekend, 72",
-    "Bedard to have shoulder surgery; MacKinnon out 12 weeks",
+    "Bedard to have shoulder surgery",
+    "MacKinnon out 12 weeks",
 ]
 for i, item in enumerate(also):
-    col, row = i % 3, i // 3
-    x0 = 8 + col * 336
-    y0 = 820 + row * 27
+    col, row = i % 2, i // 2
+    x0 = 8 + col * 504
+    y0 = 818 + row * 19
     d.text((x0, y0), f"{i + 16:02d}", font=F["list_b"], fill=RED)
-    for j, ln in enumerate(wrap(d, item, F["list"], 306)[:2]):
+    for j, ln in enumerate(wrap(d, item, F["list"], 470)[:2]):
         d.text((x0 + 26, y0 + j * 12), ln, font=F["list"], fill=INK)
 
 # ---------------------------------------------------------------- footer 982-1024
@@ -562,7 +564,7 @@ d.text((8, 990),
        "Sources: Reuters · BBC · AP · AFP · The Guardian · ESPNcricinfo · WSJ · RFE/RL · Vatican News · official statements",
        font=F["foot"], fill=GREY)
 d.text((8, 1002),
-       "32 stories verified against sources dated 22 Nov 2026. Scenes are drawn illustrations of reported events, not photographs.",
+       "31 stories checked against reporting and official updates available on 22 Nov 2026. Scenes are drawn illustrations, not photographs.",
        font=F["foot"], fill=GREY)
 r1 = "REPORTED = carried by the day's wires   CLAIM = one side's account, labelled"
 d.text((1014 - d.textlength(r1, font=F["foot"]), 990), r1, font=F["foot"],
