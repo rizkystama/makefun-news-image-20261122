@@ -23,13 +23,16 @@ const bytes = readFileSync(src);
 // exact timing disputed, Sparta II caption polished. ALSO list back to
 // 3 columns x 5 rows.
 // v5 (23 Nov, autonomous Champion-Mode revision): ChatGPT clean-direction
-// review — 32 stories, 7 regions (Africa + Oceania added). COP31 lead
+// review — 32 stories, 6 regions + Global (Africa + Oceania added). COP31 lead
 // re-framed on the Sunday COLLAPSE (NO DEAL); Alcaraz + Merkury cards added;
 // Adnoc + OpenRouter cut; 5 list items cut, 7 added (Kenya-DRC, Melbourne,
 // BepiColombo, Skubal, Trump gala, Liverpool, markets); DATE CHECK resolved;
 // timeline gains the evening events. Bayelsa-29 + FBI pause HELD (thin sourcing).
+// Final-review fixes: Alcaraz 19:17 UTC (match 18:16-20:17 CET, not 18:16),
+// HK count 14:15 UTC replaces the unverified COP31-collapse timestamp,
+// Ukraine sub-headline attribution, WORLD renamed GLOBAL.
 const EXPECTED_SHA256 =
-  "917bc35eabf174df9dfd859248ed8483921a5b5738d526d0f1b75565e77d4d38";
+  "89b91cc49c259eb93fe5951bce9b1be1bb30bcca8d4519e4063250f2efa355d1";
 
 // PNG magic bytes (89 50 4E 47 0D 0A 1A 0A). The judge tells the format from
 // the first bytes, so a non-PNG here would fail intake outright.

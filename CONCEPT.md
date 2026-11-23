@@ -54,14 +54,16 @@ v4 sat at provisional rank 819/12,860 (12-0 in judge matches, but a
 wide true-rank range) — the leaders all had 7 regions and 35–39
 stories. ChatGPT's revision review said: go CLEANER, not denser —
 32 stories, 7 regions, reject the 42-story plan and the tiny appendix.
-v5: 32 stories, 7 regions (Asia-Pacific 9 · Middle East 6 · Americas 6
-· Europe 5 · Africa 2 · Oceania 1 · World 3). COP31 lead re-framed on
+v5: 32 stories, 6 regions + Global (Asia-Pacific 9 · Middle East 6 · Americas 6
+· Europe 5 · Africa 2 · Oceania 1 · Global 3). COP31 lead re-framed on
 the Sunday collapse (NO DEAL stamp, empty chairs, cracked globe);
 Alcaraz + Merkury cards replace Adnoc + OpenRouter; list grows to 17
 (Kenya-DRC, Melbourne, BepiColombo, Skubal, Trump gala, Liverpool,
 markets snapshot added; Shukla, Ghostscript, Wadkute, Bedard, MacKinnon
 cut). DATE CHECK's 3 undecided items resolved; Bayelsa-29 and the FBI
 pause HELD on sourcing caution. Timeline gains the evening events
-(ATP final 18:16, COP31 collapse 19:17). Research: RESEARCH-v5.md
-(12 accepted, 11 rejected, 3 spot-checks). Render: 194,577 bytes,
-sha256 917bc35e…, verified byte-identical across two runs.
+(ATP final 19:17 UTC — match 18:16–20:17 CET; HK count 14:15 UTC; the
+unverified COP31-collapse timestamp was dropped after the final review
+caught it). Research: RESEARCH-v5.md
+(12 accepted, 11 rejected, 3 spot-checks). Render: 195,128 bytes,
+sha256 89b91cc4…, verified byte-identical across two runs.

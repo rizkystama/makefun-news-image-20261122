@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""news-image-20261122 — deterministic front-page render (v5: 32 stories, 7 regions).
+"""news-image-20261122 — deterministic front-page render (v5: 32 stories, 6 regions + Global).
 
 Parent-direct build (20261121 precedent: parent builds directly).
 Story data: ~/workspace/makefun/news-image-20261122-research.md (v4: 30 verified)
@@ -7,9 +7,12 @@ Story data: ~/workspace/makefun/news-image-20261122-research.md (v4: 30 verified
 Concept: ChatGPT-approved Concept A (editorial broadsheet); v5 follows the
   independent reviewer's clean direction (32 stories, NOT 42): COP31 lead
   re-framed on the Sunday COLLAPSE (no deal), Africa + Oceania added,
-  7 regions, bigger card illustrations, 15-story appendix replaced by a
-  17-item brief list. Leaders studied (ranks 1, 2, 3, 5 artifacts):
+  6 regions + Global, bigger card illustrations, 15-story appendix replaced
+  by a 17-item brief list. Leaders studied (ranks 1, 2, 3, 5 artifacts):
   7 regions + 35-39 stories win, but rank 2 proves clean beats dense.
+  Final-review fixes: timeline Alcaraz 19:17 UTC (match 18:16-20:17 CET),
+  HK count 14:15 UTC, Ukraine sub-headline attribution, WORLD renamed
+  GLOBAL (6 geographic regions + 1 Global category).
 Output: entry.png, 1024x1024, <=1 MiB. Deterministic: no randomness, no time.
 """
 from PIL import Image, ImageDraw, ImageFont
@@ -103,14 +106,14 @@ d = ImageDraw.Draw(img)
 # ---------------------------------------------------------------- top band 0-18
 d.rectangle([0, 0, 1024, 18], fill=NAVY)
 d.text((10, 3), "THE WORLD IN ONE DAY", font=F["band"], fill=(255, 255, 255))
-r = "32 STORIES  ·  7 REGIONS  ·  SUNDAY 22 NOVEMBER 2026 NEWS EDITION"
+r = "32 STORIES  ·  6 REGIONS + GLOBAL  ·  SUNDAY 22 NOVEMBER 2026 NEWS EDITION"
 d.text((1014 - d.textlength(r, font=F["band"]), 3), r, font=F["band"],
        fill=(255, 220, 130))
 
 # ---------------------------------------------------------------- masthead 18-78
 center(d, 512, 24, "Sunday 22 November 2026", F["mast"])
 center(d, 512, 80,
-       "COP31 collapses with no deal  ·  186 drones over Ukraine in the night  ·  Iran claims US radars hit",
+       "COP31 collapses with no deal  ·  Russia fires 186 drones; Ukraine says 161 downed  ·  Iran claims US radars hit",
        F["sub"], RED)
 d.rectangle([8, 98, 1016, 100], fill=INK)
 
@@ -133,7 +136,7 @@ d.line([8, 138, 1016, 138], fill=INK, width=1)
 regs = [("ASIA-PACIFIC", 9, (184, 120, 20)), ("MIDDLE EAST", 6, RED),
         ("AMERICAS", 6, (13, 100, 100)), ("EUROPE", 5, (60, 90, 140)),
         ("AFRICA", 2, (120, 90, 40)), ("OCEANIA", 1, (90, 60, 130)),
-        ("WORLD", 3, NAVY)]
+        ("GLOBAL", 3, NAVY)]
 rx = 8
 for name, n, col in regs:
     label = f"{name} {n}"
@@ -146,8 +149,8 @@ d.text((rx + 4, 143), "ONE DAY  ·  ONE PAGE", font=F["reg"], fill=GREY)
 # ---------------------------------------------------------------- timeline 158-178
 d.rectangle([8, 160, 1016, 178], fill=INK)
 tl = ("THE DAY IN UTC   01:00 HK POLLS OPEN   ·   03:56 INDONESIA FIRE: 36 MISSING   ·   "
-      "06:00 161 OF 186 DRONES DOWNED   ·   18:16 ALCARAZ WINS ATP FINALS   ·   "
-      "19:17 COP31 TALKS COLLAPSE")
+      "06:00 161 OF 186 DRONES DOWNED   ·   14:15 HK COUNT COMPLETE   ·   "
+      "19:17 ALCARAZ WINS ATP FINALS")
 f = F["time"]
 while d.textlength(tl, font=f) > 1000 and f.size > 8:
     f = font(SANS_B, f.size - 1)
