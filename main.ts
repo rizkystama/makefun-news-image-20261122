@@ -22,8 +22,14 @@ const bytes = readFileSync(src);
 // wording no longer says "denial", Wadkute labelled as Sunday reports with
 // exact timing disputed, Sparta II caption polished. ALSO list back to
 // 3 columns x 5 rows.
+// v5 (23 Nov, autonomous Champion-Mode revision): ChatGPT clean-direction
+// review — 32 stories, 7 regions (Africa + Oceania added). COP31 lead
+// re-framed on the Sunday COLLAPSE (NO DEAL); Alcaraz + Merkury cards added;
+// Adnoc + OpenRouter cut; 5 list items cut, 7 added (Kenya-DRC, Melbourne,
+// BepiColombo, Skubal, Trump gala, Liverpool, markets); DATE CHECK resolved;
+// timeline gains the evening events. Bayelsa-29 + FBI pause HELD (thin sourcing).
 const EXPECTED_SHA256 =
-  "30a1cd10e1e5e295f007243a6179e39a7459bbaec3d9493d07f01c509cc3a0ee";
+  "917bc35eabf174df9dfd859248ed8483921a5b5738d526d0f1b75565e77d4d38";
 
 // PNG magic bytes (89 50 4E 47 0D 0A 1A 0A). The judge tells the format from
 // the first bytes, so a non-PNG here would fail intake outright.
