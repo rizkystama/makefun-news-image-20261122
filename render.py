@@ -119,7 +119,7 @@ d.rectangle([8, 98, 1016, 100], fill=INK)
 
 # ---------------------------------------------------------------- stat strip 100-136
 stats = [("186", "DRONES FIRED OVERNIGHT"),
-         ("161", "DOWNED OR SUPPRESSED"),
+         ("161", "NEUTRALISED"),
          ("35%", "ELECTRICITY GOAL 2035"),
          ("$120bn", "ADAPTATION TARGET DROPPED"),
          ("720/9", "INDIA'S RECORD TEST TOTAL"),
@@ -148,8 +148,8 @@ d.text((rx + 4, 143), "ONE DAY  ·  ONE PAGE", font=F["reg"], fill=GREY)
 
 # ---------------------------------------------------------------- timeline 158-178
 d.rectangle([8, 160, 1016, 178], fill=INK)
-tl = ("THE DAY IN UTC   01:00 HK POLLS OPEN   ·   03:56 INDONESIA FIRE: 36 MISSING   ·   "
-      "06:00 161 OF 186 DRONES DOWNED   ·   14:15 HK COUNT COMPLETE   ·   "
+tl = ("THE DAY IN UTC   01:00 HK POLLS OPEN   ·   03:56 INDONESIA FIRE   ·   "
+      "06:00 UKRAINE NEUTRALISES 161 OF 186 DRONES   ·   14:15 HK COUNT COMPLETE   ·   "
       "19:17 ALCARAZ WINS ATP FINALS")
 f = F["time"]
 while d.textlength(tl, font=f) > 1000 and f.size > 8:

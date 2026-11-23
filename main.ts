@@ -31,8 +31,11 @@ const bytes = readFileSync(src);
 // Final-review fixes: Alcaraz 19:17 UTC (match 18:16-20:17 CET, not 18:16),
 // HK count 14:15 UTC replaces the unverified COP31-collapse timestamp,
 // Ukraine sub-headline attribution, WORLD renamed GLOBAL.
+// Confirmation-round micro-fix: "161 NEUTRALISED" (Air Force: shot down
+// or suppressed) in the stats strip + timeline; Indonesia timeline entry
+// shortened to keep the bar at 9px.
 const EXPECTED_SHA256 =
-  "89b91cc49c259eb93fe5951bce9b1be1bb30bcca8d4519e4063250f2efa355d1";
+  "48848c302b43586f9a28df7125f0f2a2d66da048ce3c558f147b4d29b419eee7";
 
 // PNG magic bytes (89 50 4E 47 0D 0A 1A 0A). The judge tells the format from
 // the first bytes, so a non-PNG here would fail intake outright.
